@@ -1,0 +1,50 @@
+﻿<Window x:Class="miniKifir.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:miniKifir"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgDiakok"/>
+
+        <StackPanel Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Margin="10">
+            <Button x:Name="btnUjFeladat"
+                Grid.Column="1"
+                Content="Felvétel" 
+                Margin="5"
+                Width="150"
+                Height="25"
+                Click="Button_Click_UjDiak_Felvetele"/>
+            <Button x:Name="btnTorles"
+                Grid.Column="1"
+                Content="Törlés" 
+                Margin="5"
+                Width="150"
+                Height="25"/>
+            <Button x:Name="btnImport"
+                Grid.Column="1"
+                Content="Import" 
+                Margin="5"
+                Width="150"
+                Height="25"/>
+            <Button x:Name="btnExport"
+                Grid.Column="1"
+                Content="Export" 
+                Margin="5"
+                Width="150"
+                Height="25"/>
+        </StackPanel>
+    </Grid>
+</Window>

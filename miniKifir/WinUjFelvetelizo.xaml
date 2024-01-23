@@ -1,0 +1,120 @@
+﻿<Window x:Class="miniKifir.WinUjFelvetelizo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:miniKifir"
+        mc:Ignorable="d"
+        Title="WinUjFelvetelizo" Height="450" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel VerticalAlignment="Center">
+            <Label
+            Content="OM azonosító"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtOMazonosito"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="1">
+            <Label
+            Content="Tanuló neve"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtNeve"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="2">
+            <Label
+            Content="Értesítési címe"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtCim"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="3">
+            <Label
+            Content="E-mail címe"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtEmail"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="4">
+            <Label
+            Content="Születési dátuma"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtSzuletesiDatum"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="5">
+            <Label
+            Content="Matematika eredménye"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtMatematika"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="6">
+            <Label
+            Content="Magyar nyelv eredménye"
+            VerticalAlignment="Center"
+            Width="200"/>
+
+            <TextBox x:Name="txtMagyar"
+            Grid.Column="1"
+            Width="200"
+            Height="30"/>
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center"
+                    Grid.Row="7">
+            <Button x:Name="btnRogzit"
+                    Content="Adatok rögzítése"
+                    Height="20"
+                    Width="200" Click="btnRogzit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
