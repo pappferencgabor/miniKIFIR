@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace miniKifir
 {
@@ -63,66 +64,58 @@ namespace miniKifir
             }
         }
 
-        private void Button_Click_UjDiak_Felvetele(object sender, RoutedEventArgs e)
+        private void btnUjTanulo_Click(object sender, RoutedEventArgs e)
         {
             Felvetelizo ujdiak = new Felvetelizo();
-            //ujdiak.Neve = txtNeve.Text;
 
             WinUjFelvetelizo ujablak = new WinUjFelvetelizo(ujdiak);
             ujablak.ShowDialog();
 
-            //lbStringFormaban.Content = ujdiak.CSVSortAdVissza();
             diakok.Add(ujdiak);
-
-
-
-
-            //JSON (JavaScript Object Notation) 
-
-            var opciok = new JsonSerializerOptions();
-            opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
-            opciok.WriteIndented = true;
-
-            string diakJSON = JsonSerializer.Serialize(ujdiak, opciok);
-
-
-            //String diakJSON = JsonSerializer.Serialize(ujdiak);
-            //tbMinta.Text = diakJSON;
-
-
-            string mintaJSON =
-                "{\"OM_Azonosito\": \"19192828375\"," +
-                "\"Neve\": \"Bodrogi Kázmér\"," +
-                "\"ErtesitesiCime\": \"Bodrogpuszta, Gólya u.12.\"," +
-                "\"Email\": \"bodigo@gogo.com\"," +
-                "\"SzuletesiDatum\": \"1929-12-31T00:00:00\"," +
-                "\"Matematika\": 50," +
-                "\"Magyar\": 20}";
-
-            Felvetelizo ujabbDiak = JsonSerializer.Deserialize<Felvetelizo>(mintaJSON);
-            diakok.Add(ujabbDiak);
-
-            //JS - szerializáció
-            //let jsonAdatok = JSON.stringify(adatok);
-
-            //JS - deszerializáció
-            //const jsonAdatok = '{"nev":"Gipsz Jakab","eletkor":21,"aktiv":true,"cim":{"varos":"Budapest","utca":"Kossuth utca 1"},"hobbik":["olvasás","úszás","zenehallgatás"]}';
-
-            //const visszaalakitottAdatok = JSON.parse(jsonAdatok);
         }
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
-            var opciok = new JsonSerializerOptions();
-            opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
-            opciok.WriteIndented = true;
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "CSV file (*.csv)|*.csv|JSON file (*.json)|*.json";
+            sfd.ShowDialog();
 
-            string adatokSorai = JsonSerializer.Serialize(diakok, opciok);
+            if (sfd.FileName != "")
+            {
+                if (sfd.FileName.EndsWith(".csv"))
+                {
+                    StreamWriter sw = new StreamWriter(sfd.FileName);
+                    foreach (var diak in diakok)
+                    {
+                        sw.WriteLine($"{diak.CSVSortAdVissza()}");
+                    }
+                    sw.Close();
+                    MessageBox.Show("Sikeres exportálás.");
+                }
+                else if (sfd.FileName.EndsWith(".json"))
+                {
+                    var opciok = new JsonSerializerOptions();
+                    opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+                    opciok.WriteIndented = true;
 
-            //Fájlba írás
-            var lista = new List<String>();
-            lista.Add(adatokSorai);
-            File.WriteAllLines("JSON.TXT", lista);
+                    string jsonLines = JsonSerializer.Serialize(diakok, opciok);
+                    File.WriteAllLines(sfd.FileName, jsonLines.Split("\n"));
+                    MessageBox.Show("Sikeres exportálás.");
+                }
+                else
+                {
+                    MessageBox.Show("Helytelen kiterjesztés.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nem adtál meg mentési helyet! Az exportálás sikertelen.");
+            }
+        }
+
+        private void btnTorles_Click(object sender, RoutedEventArgs e)
+        {
+            diakok.RemoveAt(dgDiakok.SelectedIndex);
         }
     }
 }

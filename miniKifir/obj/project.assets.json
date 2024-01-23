@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\papp.ferenc.gabor\\.nuget\\packages\\": {}
+    "C:\\Users\\pfeco\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\papp.ferenc.gabor\\Documents\\Papp Ferenc Gábor\\miniKifir\\miniKifir\\miniKifir\\miniKifir.csproj",
+      "projectUniqueName": "D:\\Szísárp projects\\miniKIFIR-main\\miniKifir\\miniKifir.csproj",
       "projectName": "miniKifir",
-      "projectPath": "C:\\Users\\papp.ferenc.gabor\\Documents\\Papp Ferenc Gábor\\miniKifir\\miniKifir\\miniKifir\\miniKifir.csproj",
-      "packagesPath": "C:\\Users\\papp.ferenc.gabor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\papp.ferenc.gabor\\Documents\\Papp Ferenc Gábor\\miniKifir\\miniKifir\\miniKifir\\obj\\",
+      "projectPath": "D:\\Szísárp projects\\miniKIFIR-main\\miniKifir\\miniKifir.csproj",
+      "packagesPath": "C:\\Users\\pfeco\\.nuget\\packages\\",
+      "outputPath": "D:\\Szísárp projects\\miniKIFIR-main\\miniKifir\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\papp.ferenc.gabor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pfeco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -64,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

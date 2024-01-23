@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:miniKifir"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="1100">
+    <Viewbox>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
@@ -19,32 +20,44 @@
 
         <StackPanel Grid.Column="1"
                     VerticalAlignment="Center"
-                    Margin="10">
-            <Button x:Name="btnUjFeladat"
+                    Margin="10"
+                    Grid.RowSpan="2">
+            <Button x:Name="btnUjTanulo"
                 Grid.Column="1"
                 Content="Felvétel" 
                 Margin="5"
                 Width="150"
                 Height="25"
-                Click="Button_Click_UjDiak_Felvetele"/>
+                Click="btnUjTanulo_Click"/>
+            
+            <Button x:Name="btnModosit"
+                Grid.Column="1"
+                Content="Módosít" 
+                Margin="5"
+                Width="150"
+                Height="25"/>
+            
             <Button x:Name="btnTorles"
                 Grid.Column="1"
                 Content="Törlés" 
                 Margin="5"
                 Width="150"
-                Height="25"/>
+                Height="25" Click="btnTorles_Click"/>
+            
             <Button x:Name="btnImport"
                 Grid.Column="1"
                 Content="Import" 
                 Margin="5"
                 Width="150"
                 Height="25"/>
+            
             <Button x:Name="btnExport"
                 Grid.Column="1"
                 Content="Export" 
                 Margin="5"
                 Width="150"
-                Height="25"/>
+                Height="25" Click="btnExport_Click"/>
         </StackPanel>
     </Grid>
+    </Viewbox>
 </Window>

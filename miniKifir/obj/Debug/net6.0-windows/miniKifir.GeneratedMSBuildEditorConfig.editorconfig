@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = miniKifir
-build_property.ProjectDir = C:\Users\papp.ferenc.gabor\Documents\Papp Ferenc Gábor\miniKifir\miniKifir\miniKifir\
+build_property.ProjectDir = D:\Szísárp projects\miniKIFIR-main\miniKifir\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -21,3 +21,25 @@ C:\Users\papp.ferenc.gabor\Documents\Papp Ferenc Gábor\miniKifir\miniKifir\mini
 C:\Users\papp.ferenc.gabor\Documents\Papp Ferenc Gábor\miniKifir\miniKifir\miniKifir\obj\Debug\net6.0-windows\miniKifir.pdb
 C:\Users\papp.ferenc.gabor\Documents\Papp Ferenc Gábor\miniKifir\miniKifir\miniKifir\obj\Debug\net6.0-windows\miniKifir.genruntimeconfig.cache
 C:\Users\papp.ferenc.gabor\Documents\Papp Ferenc Gábor\miniKifir\miniKifir\miniKifir\obj\Debug\net6.0-windows\ref\miniKifir.dll
+D:\Szísárp projects\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.exe
+D:\Szísárp projects\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.deps.json
+D:\Szísárp projects\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.runtimeconfig.json
+D:\Szísárp projects\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.dll
+D:\Szísárp projects\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.pdb
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\WinUjFelvetelizo.g.cs
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\App.g.cs
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir_MarkupCompile.cache
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir_MarkupCompile.lref
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\MainWindow.baml
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\WinUjFelvetelizo.baml
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.g.resources
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.GeneratedMSBuildEditorConfig.editorconfig
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.AssemblyInfoInputs.cache
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.AssemblyInfo.cs
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.csproj.CoreCompileInputs.cache
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.dll
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\refint\miniKifir.dll
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.pdb
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.genruntimeconfig.cache
+D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\ref\miniKifir.dll
