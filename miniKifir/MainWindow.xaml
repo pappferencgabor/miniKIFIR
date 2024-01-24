@@ -16,7 +16,7 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgDiakok"/>
+        <DataGrid x:Name="dgDiakok" IsReadOnly="True"/>
 
         <StackPanel Grid.Column="1"
                     VerticalAlignment="Center"
@@ -35,7 +35,8 @@
                 Content="Módosít" 
                 Margin="5"
                 Width="150"
-                Height="25"/>
+                Height="25"
+                    Click="btnModosit_Click"/>
             
             <Button x:Name="btnTorles"
                 Grid.Column="1"
@@ -49,7 +50,8 @@
                 Content="Import" 
                 Margin="5"
                 Width="150"
-                Height="25"/>
+                Height="25"
+                    Click="btnImport_Click"/>
             
             <Button x:Name="btnExport"
                 Grid.Column="1"

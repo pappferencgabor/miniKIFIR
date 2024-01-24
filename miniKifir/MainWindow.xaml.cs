@@ -1,22 +1,13 @@
-﻿using System;
-using System.IO;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
-using System.Text;
+using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Win32;
 
 namespace miniKifir
 {
@@ -115,7 +106,71 @@ namespace miniKifir
 
         private void btnTorles_Click(object sender, RoutedEventArgs e)
         {
-            diakok.RemoveAt(dgDiakok.SelectedIndex);
+            if (dgDiakok.SelectedIndex == -1)
+            {
+                MessageBox.Show("Nem lehet torolni kivalasztott mezo nelkul!");
+            } else
+            {
+                List<int> indexes = new List<int>();
+                foreach (Felvetelizo diak in dgDiakok.SelectedItems)
+                {
+                    for(int i = 0; i < dgDiakok.Items.Count; i++)
+                    {
+                        if (dgDiakok.Items.GetItemAt(i) == diak)
+                        {
+                            indexes.Add(i);
+                        }
+                    }
+                }
+
+                foreach (int i in indexes)
+                {
+                    diakok.RemoveAt(i);
+                }
+            }
+        }
+
+        private void btnImport_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofp = new OpenFileDialog();
+            ofp.InitialDirectory = "c:\\";
+            ofp.Filter = "CSV files (*.csv)|*.csv|JSON files (*.json)|*.json";
+            ofp.RestoreDirectory = true;
+
+            if (ofp.ShowDialog() == true)
+            {
+                var fileStream = ofp.OpenFile();
+                /*
+                if (Path.GetExtension(ofp.FileName) == "json") {
+                    string json = "";
+
+                    using (StreamReader sr = new StreamReader(fileStream))
+                    {
+                        json = sr.ReadToEnd()
+                    }
+                }
+                */
+            }
+
+        }
+
+        private void btnModosit_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgDiakok.SelectedItems.Count > 1)
+            {
+                MessageBox.Show("Csak egy elem lehet kivalasztva!"); 
+            } else
+            {
+                Felvetelizo felvetelizo = dgDiakok.SelectedItem as Felvetelizo;
+                int index = dgDiakok.SelectedIndex;
+                WinUjFelvetelizo wn = new WinUjFelvetelizo(felvetelizo);
+
+                wn.ShowDialog();
+
+                diakok.RemoveAt(index);
+                diakok.Insert(index, felvetelizo);
+            }
+            
         }
     }
 }

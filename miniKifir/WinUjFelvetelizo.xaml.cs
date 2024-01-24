@@ -19,29 +19,23 @@ namespace miniKifir
     /// </summary>
     public partial class WinUjFelvetelizo : Window
     {
-        Felvetelizo felvetelizoAdatai;
+        Felvetelizo felvetelizoAdatai = new Felvetelizo();
         public WinUjFelvetelizo()
         {
             InitializeComponent();
-
+            this.DataContext = felvetelizoAdatai;
         }
 
         public WinUjFelvetelizo(Felvetelizo ujdiak) : this()
         {
-            this.felvetelizoAdatai = ujdiak;
-
+            felvetelizoAdatai = ujdiak;
+            this.DataContext = felvetelizoAdatai;
             this.Title = $"{felvetelizoAdatai.Neve} adatainak rögzítése";
-            txtNeve.Text = felvetelizoAdatai.Neve;
         }
 
 
         private void btnRogzit_Click(object sender, RoutedEventArgs e)
         {
-            felvetelizoAdatai.OM_Azonosito = txtOMazonosito.Text;
-            felvetelizoAdatai.Neve = txtNeve.Text;
-            felvetelizoAdatai.ErtesitesiCime = txtCim.Text;
-            felvetelizoAdatai.Email = txtEmail.Text;
-            felvetelizoAdatai.SzuletesiDatum = Convert.ToDateTime(txtSzuletesiDatum.Text);
 
             //Lehet és kell hibát vizsgálni, de most csak itt adok példát rá!
             try

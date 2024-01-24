@@ -28,7 +28,7 @@
             <TextBox x:Name="txtOMazonosito"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding OM_Azonosito, Mode=OneWay}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -41,7 +41,7 @@
             <TextBox x:Name="txtNeve"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding Neve}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -54,7 +54,7 @@
             <TextBox x:Name="txtCim"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding ErtesitesiCime}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -67,7 +67,7 @@
             <TextBox x:Name="txtEmail"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding Email}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -77,10 +77,10 @@
             VerticalAlignment="Center"
             Width="200"/>
 
-            <TextBox x:Name="txtSzuletesiDatum"
+            <DatePicker x:Name="dtpDatum"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding SzuletesiDatum}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -93,7 +93,7 @@
             <TextBox x:Name="txtMatematika"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding Matematika}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"
@@ -106,7 +106,7 @@
             <TextBox x:Name="txtMagyar"
             Grid.Column="1"
             Width="200"
-            Height="30"/>
+            Height="30" Text="{Binding Magyar}"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center"

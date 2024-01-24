@@ -50,7 +50,8 @@ namespace miniKifir
                 {
                     try
                     {
-                        int.Parse(value);
+                        //Itt muszaj az Int64 hasznalata mert a 11 karakteres omazon nagyobb mint az Int32
+                        Int64.Parse(value.ToString());
                         this.omAzon = value;
                     }
                     catch (Exception)
