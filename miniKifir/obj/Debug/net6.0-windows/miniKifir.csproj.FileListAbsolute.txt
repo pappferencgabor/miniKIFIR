@@ -43,3 +43,25 @@ D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\refint\m
 D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.pdb
 D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.genruntimeconfig.cache
 D:\Szísárp projects\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\ref\miniKifir.dll
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.exe
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.deps.json
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.runtimeconfig.json
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.dll
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\bin\Debug\net6.0-windows\miniKifir.pdb
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\MainWindow.g.cs
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\WinUjFelvetelizo.g.cs
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\App.g.cs
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir_MarkupCompile.cache
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir_MarkupCompile.lref
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\MainWindow.baml
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\WinUjFelvetelizo.baml
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.g.resources
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.AssemblyInfoInputs.cache
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.AssemblyInfo.cs
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.dll
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\refint\miniKifir.dll
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.pdb
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\miniKifir.genruntimeconfig.cache
+\\Mac\Home\Downloads\miniKIFIR-main\miniKIFIR-main\miniKifir\obj\Debug\net6.0-windows\ref\miniKifir.dll

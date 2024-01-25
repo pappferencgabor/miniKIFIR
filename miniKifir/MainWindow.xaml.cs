@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Windows;
+using System.Windows.Media.TextFormatting;
 
 namespace miniKifir
 {
@@ -16,7 +18,7 @@ namespace miniKifir
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<IFelvetelizo> diakok = new ObservableCollection<IFelvetelizo>();
+        ObservableCollection<Felvetelizo> diakok = new ObservableCollection<Felvetelizo>();
 
         public MainWindow()
         {
@@ -111,21 +113,15 @@ namespace miniKifir
                 MessageBox.Show("Nem lehet torolni kivalasztott mezo nelkul!");
             } else
             {
-                List<int> indexes = new List<int>();
-                foreach (Felvetelizo diak in dgDiakok.SelectedItems)
+               List<string> om = new List<string>();
+               foreach(Felvetelizo f in dgDiakok.SelectedItems)
                 {
-                    for(int i = 0; i < dgDiakok.Items.Count; i++)
-                    {
-                        if (dgDiakok.Items.GetItemAt(i) == diak)
-                        {
-                            indexes.Add(i);
-                        }
-                    }
+                    om.Add(f.OM_Azonosito);
                 }
-
-                foreach (int i in indexes)
+                
+               for (int i = 0; i < om.Count; i++)
                 {
-                    diakok.RemoveAt(i);
+                    diakok.Remove(diakok.Where(x => x.OM_Azonosito == om[i]).FirstOrDefault());
                 }
             }
         }
@@ -140,18 +136,81 @@ namespace miniKifir
             if (ofp.ShowDialog() == true)
             {
                 var fileStream = ofp.OpenFile();
-                /*
-                if (Path.GetExtension(ofp.FileName) == "json") {
+                if (Path.GetExtension(ofp.FileName) == ".json")
+                {
                     string json = "";
 
                     using (StreamReader sr = new StreamReader(fileStream))
                     {
-                        json = sr.ReadToEnd()
+                        json = sr.ReadToEnd();
                     }
-                }
-                */
-            }
+                    var readjson = JsonSerializer.Deserialize<ObservableCollection<Felvetelizo>>(json);
+                    var dr = MessageBox.Show("Hozzaszeretne fuzni? Amennyiben nem,akkor felulirasra kerulnek", "Biztos hozzaadja?", MessageBoxButton.YesNo);
+                    if (dr == MessageBoxResult.Yes)
+                    {
+                        foreach (Felvetelizo diak in readjson)
+                        {
+                            diakok.Add(diak);
+                        }
+                    }
+                    else
+                    {
+                        List<Felvetelizo> temp = new List<Felvetelizo>();
+                        temp = diakok.ToList();
+                        foreach(var diak in temp)
+                        {
+                            diakok.Remove(diak);
+                        }
+                        foreach (Felvetelizo diak in readjson)
+                        {
+                            diakok.Add(diak);
+                        }
+                    }
+                    
 
+                }
+                if (Path.GetExtension(ofp.FileName) == ".csv")
+                {
+                    string csv = "";
+                    using (StreamReader sr = new StreamReader(fileStream))
+                    {
+                        csv = sr.ReadToEnd();
+                    }
+                    List<string> lines = csv.Split("\n").ToList();
+                    lines.RemoveAt(lines.Count -1);
+
+                    if (dgDiakok.Items.Count > 0)
+                    {
+                        var dr = MessageBox.Show("Hozzaszeretne fuzni? Amennyiben nem,akkor felulirasra kerulnek", "Biztos hozzaadja?", MessageBoxButton.YesNo);
+                        if (dr == MessageBoxResult.Yes)
+                        {
+                            foreach (string diak in lines)
+                            {
+                                foreach (string line in lines)
+                                {
+                                    diakok.Append(new Felvetelizo(line));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            diakok = new ObservableCollection<Felvetelizo>();
+                            foreach (string line in lines)
+                            {
+                                diakok.Append(new Felvetelizo(line));
+                            }
+
+                        }
+                    }   else
+                    {
+                        foreach (string line in lines)
+                        {
+                            diakok.Append(new Felvetelizo(line));
+                        }
+                    }
+                    
+                }
+            }
         }
 
         private void btnModosit_Click(object sender, RoutedEventArgs e)
