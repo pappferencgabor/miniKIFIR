@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
 
 namespace miniKifir
@@ -22,6 +23,9 @@ namespace miniKifir
 
         public MainWindow()
         {
+            LinearGradientBrush gradientBrush = new LinearGradientBrush(Color.FromRgb(0, 212, 255), Color.FromRgb(9, 9, 121), new Point(0.5, 0), new Point(0.5, 1));
+            this.Background = gradientBrush;
+
             InitializeComponent();
             AdatokBetoltese();
             dgDiakok.ItemsSource = diakok;
@@ -77,23 +81,59 @@ namespace miniKifir
             {
                 if (sfd.FileName.EndsWith(".csv"))
                 {
-                    StreamWriter sw = new StreamWriter(sfd.FileName);
-                    foreach (var diak in diakok)
+                    if (File.Exists(sfd.FileName))
                     {
-                        sw.WriteLine($"{diak.CSVSortAdVissza()}");
+                        MessageBoxResult mbr = MessageBox.Show("Felülírod a már meglévő fájlt?", "Fájl mentése", MessageBoxButton.YesNo);
+
+                        if (mbr == MessageBoxResult.Yes)
+                        {
+                            StreamWriter sw = new StreamWriter(sfd.FileName);
+                            foreach (var diak in diakok)
+                            {
+                                sw.WriteLine($"{diak.CSVSortAdVissza()}");
+                            }
+                            sw.Close();
+                            MessageBox.Show("Sikeres exportálás.");
+                        }
                     }
-                    sw.Close();
-                    MessageBox.Show("Sikeres exportálás.");
+                    else
+                    {
+                        StreamWriter sw = new StreamWriter(sfd.FileName);
+                        foreach (var diak in diakok)
+                        {
+                            sw.WriteLine($"{diak.CSVSortAdVissza()}");
+                        }
+                        sw.Close();
+                        MessageBox.Show("Sikeres exportálás.");
+                    }
                 }
                 else if (sfd.FileName.EndsWith(".json"))
                 {
-                    var opciok = new JsonSerializerOptions();
-                    opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
-                    opciok.WriteIndented = true;
+                    if (File.Exists(sfd.FileName))
+                    {
+                        MessageBoxResult mbr = MessageBox.Show("Felülírod a már meglévő fájlt?", "Fájl mentése", MessageBoxButton.YesNo);
 
-                    string jsonLines = JsonSerializer.Serialize(diakok, opciok);
-                    File.WriteAllLines(sfd.FileName, jsonLines.Split("\n"));
-                    MessageBox.Show("Sikeres exportálás.");
+                        if (mbr == MessageBoxResult.Yes)
+                        {
+                            var opciok = new JsonSerializerOptions();
+                            opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+                            opciok.WriteIndented = true;
+
+                            string jsonLines = JsonSerializer.Serialize(diakok, opciok);
+                            File.WriteAllText(sfd.FileName, jsonLines);
+                            MessageBox.Show("Sikeres exportálás.");
+                        }
+                    }
+                    else
+                    {
+                        var opciok = new JsonSerializerOptions();
+                        opciok.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+                        opciok.WriteIndented = true;
+
+                        string jsonLines = JsonSerializer.Serialize(diakok, opciok);
+                        File.WriteAllText(sfd.FileName, jsonLines);
+                        MessageBox.Show("Sikeres exportálás.");
+                    }
                 }
                 else
                 {

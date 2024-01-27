@@ -5,61 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:miniKifir"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1100">
+        Title="miniKIFIR" Height="500" Width="1100">
     <Viewbox>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="7*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dgDiakok" IsReadOnly="True"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dgDiakok" IsReadOnly="True"/>
 
-        <StackPanel Grid.Column="1"
-                    VerticalAlignment="Center"
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Margin="10"
+                        Grid.RowSpan="2">
+                <Button x:Name="btnUjTanulo"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Felvétel"
                     Margin="10"
-                    Grid.RowSpan="2">
-            <Button x:Name="btnUjTanulo"
-                Grid.Column="1"
-                Content="Felvétel" 
-                Margin="5"
-                Width="150"
-                Height="25"
-                Click="btnUjTanulo_Click"/>
-            
-            <Button x:Name="btnModosit"
-                Grid.Column="1"
-                Content="Módosít" 
-                Margin="5"
-                Width="150"
-                Height="25"
+                    Width="150"
+                    Height="35"
+                    Click="btnUjTanulo_Click"/>
+
+                <Button x:Name="btnModosit"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Módosít"
+                    Margin="10"
+                    Width="150"
+                    Height="35"
                     Click="btnModosit_Click"/>
-            
-            <Button x:Name="btnTorles"
-                Grid.Column="1"
-                Content="Törlés" 
-                Margin="5"
-                Width="150"
-                Height="25" Click="btnTorles_Click"/>
-            
-            <Button x:Name="btnImport"
-                Grid.Column="1"
-                Content="Import" 
-                Margin="5"
-                Width="150"
-                Height="25"
+
+                <Button x:Name="btnTorles"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Törlés"
+                    Margin="10"
+                    Width="150"
+                    Height="35" 
+                    Click="btnTorles_Click"/>
+
+                <Button x:Name="btnImport"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Import"
+                    Margin="10"
+                    Width="150"
+                    Height="35"
                     Click="btnImport_Click"/>
-            
-            <Button x:Name="btnExport"
-                Grid.Column="1"
-                Content="Export" 
-                Margin="5"
-                Width="150"
-                Height="25" Click="btnExport_Click"/>
-        </StackPanel>
-    </Grid>
+
+                <Button x:Name="btnExport"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Export"
+                    Margin="10"
+                    Width="150"
+                    Height="35" Click="btnExport_Click"/>
+            </StackPanel>
+        </Grid>
     </Viewbox>
 </Window>

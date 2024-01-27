@@ -22,6 +22,9 @@ namespace miniKifir
         Felvetelizo felvetelizoAdatai = new Felvetelizo();
         public WinUjFelvetelizo()
         {
+            LinearGradientBrush gradientBrush = new LinearGradientBrush(Color.FromRgb(0, 212, 255), Color.FromRgb(9, 9, 121), new Point(0.5, 0), new Point(0.5, 1));
+            this.Background = gradientBrush;
+
             InitializeComponent();
             this.DataContext = felvetelizoAdatai;
         }
@@ -30,9 +33,7 @@ namespace miniKifir
         {
             felvetelizoAdatai = ujdiak;
             this.DataContext = felvetelizoAdatai;
-            this.Title = "Tanuló adatainak rögzítése";
         }
-
 
         private void btnRogzit_Click(object sender, RoutedEventArgs e)
         {

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:miniKifir"
         mc:Ignorable="d"
-        Title="WinUjFelvetelizo" Height="450" Width="300">
+        Title="miniKIFIR - Tanuló" Height="450" Width="300">
 
+    <Viewbox>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -21,11 +22,13 @@
 
         <StackPanel VerticalAlignment="Center">
             <Label
+            Foreground="White"
             Content="OM azonosító"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtOMazonosito"
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding OM_Azonosito, Mode=OneWay}"/>
@@ -34,11 +37,13 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="1">
             <Label
+            Foreground="White"
             Content="Tanuló neve"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtNeve"
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding Neve}"/>
@@ -47,11 +52,13 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="2">
             <Label
+            Foreground="White"
             Content="Értesítési címe"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtCim"
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding ErtesitesiCime}"/>
@@ -60,11 +67,14 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="3">
             <Label
+            Foreground="White"
             Content="E-mail címe"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtEmail"
+                     
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding Email}"/>
@@ -73,11 +83,12 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="4">
             <Label
+            Foreground="White"
             Content="Születési dátuma"
             VerticalAlignment="Center"
             Width="200"/>
 
-            <DatePicker x:Name="dtpDatum"
+            <DatePicker Style="{DynamicResource DatePickerStyle}" x:Name="dtpDatum"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding SzuletesiDatum}"/>
@@ -86,24 +97,28 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="5">
             <Label
+            Foreground="White"
             Content="Matematika eredménye"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtMatematika"
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding Matematika}"/>
         </StackPanel>
-
+        
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="6">
             <Label
+            Foreground="White"
             Content="Magyar nyelv eredménye"
             VerticalAlignment="Center"
             Width="200"/>
 
             <TextBox x:Name="txtMagyar"
+            Style="{DynamicResource TextBoxStyle}"
             Grid.Column="1"
             Width="200"
             Height="30" Text="{Binding Magyar}"/>
@@ -112,9 +127,12 @@
         <StackPanel VerticalAlignment="Center"
                     Grid.Row="7">
             <Button x:Name="btnRogzit"
+                    Style="{DynamicResource ButtonStyle}"
+                    Margin="0 20 0 20"
                     Content="Adatok rögzítése"
-                    Height="20"
+                    Height="30"
                     Width="200" Click="btnRogzit_Click"/>
         </StackPanel>
     </Grid>
+    </Viewbox>
 </Window>
