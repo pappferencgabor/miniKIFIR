@@ -65,6 +65,14 @@
                     Margin="10"
                     Width="150"
                     Height="35" Click="btnExport_Click"/>
+                
+                <Button x:Name="btnAdatbazis"
+                    Style="{DynamicResource ButtonStyle}"
+                    Grid.Column="1"
+                    Content="Adatbázisba"
+                    Margin="10"
+                    Width="150"
+                    Height="35" Click="btnAdatbazis_Click"/>
             </StackPanel>
         </Grid>
     </Viewbox>

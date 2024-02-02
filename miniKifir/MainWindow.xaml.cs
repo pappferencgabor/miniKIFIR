@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.TextFormatting;
+using MySql.Data.MySqlClient;
 
 namespace miniKifir
 {
@@ -270,6 +271,36 @@ namespace miniKifir
                 diakok.Insert(index, felvetelizo);
             }
             
+        }
+
+        private void btnAdatbazis_Click(object sender, RoutedEventArgs e)
+        {
+            string connectionString = "datasource=localhost;" +
+                                      "port=3306;" +
+                                      "username=root;" +
+                                      "password=;" +
+                                      "database=minikifir;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            string queryText = $"delete from tanulok";
+            MySqlCommand command = new MySqlCommand(queryText, connection);
+
+            command.ExecuteReader();
+            connection.Close();
+
+            foreach (Felvetelizo diak in diakok)
+            {
+                connection.Open();
+                queryText = $"insert into tanulok values(\"{diak.OM_Azonosito}\", \"{diak.Neve}\", \"{diak.ErtesitesiCime}\", \"{diak.Email}\", \"{diak.SzuletesiDatum}\", {diak.Matematika}, {diak.Magyar})";
+                command = new MySqlCommand(queryText, connection);
+
+                command.ExecuteReader();
+                connection.Close();
+            }
+
+            MessageBox.Show("Adatbázisba írás megtörtént!");
         }
     }
 }
