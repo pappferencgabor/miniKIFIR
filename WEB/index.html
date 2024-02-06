@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miniKifir</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="search">
+            <h2>Szűrési beállítások</h2>
+            <div>
+                <input type="checkbox" name="filter" id="inputOMCB" onclick="showInputs()" checked> 
+                <span>OM alapján </span>
+                <input type="text" id="inputOM" onclick="checkFilters()">
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" name="filter" id="inputNameCB" onclick="showInputs()" checked>
+                <span>Név alapján </span>
+                <input type="text" id="inputName" onclick="checkFilters()">
+            </div>
+            <br>
+            <span>Pontszám alapján <input type="number" name="filter" id="inputPoints" oninput="checkPoints()" value="0"></span>
+        </div>
+
+        <hr>
+
+        <div id="stats">
+
+        </div>
+
+        <table id="results"></table>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
