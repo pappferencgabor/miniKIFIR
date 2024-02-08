@@ -19,11 +19,28 @@ body {
     display: inline-block;
 }
 
+#stats {
+    text-align: center;
+    margin: auto;
+}
+.stat {
+    color: bisque;
+}
+
 #results {
     width: 40%;
     margin: auto;
     text-align: center;
     border-collapse: collapse;
+}
+#results tr:hover {
+    background-color: navajowhite;
+    color: black;
+    transition: 0.2s;
+}
+#results td:hover {
+    background-color: rgb(255, 200, 116);
+    transition: 0.2s;
 }
 #results th {
     text-transform: uppercase;

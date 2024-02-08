@@ -13,13 +13,13 @@
             <div>
                 <input type="checkbox" name="filter" id="inputOMCB" onclick="showInputs()" checked> 
                 <span>OM alapján </span>
-                <input type="text" id="inputOM" onclick="checkFilters()">
+                <input type="text" id="inputOM" oninput="checkFilters()">
             </div>
             <br>
             <div>
                 <input type="checkbox" name="filter" id="inputNameCB" onclick="showInputs()" checked>
                 <span>Név alapján </span>
-                <input type="text" id="inputName" onclick="checkFilters()">
+                <input type="text" id="inputName" oninput="checkFilters()">
             </div>
             <br>
             <span>Pontszám alapján <input type="number" name="filter" id="inputPoints" oninput="checkPoints()" value="0"></span>
@@ -28,8 +28,16 @@
         <hr>
 
         <div id="stats">
-
+            <h3>Eredmények</h3>
+            <h4>
+                Tanulók száma: <span id="tanulokSzama" class="stat">00</span> db <br>
+                Matematika pontszámok átlaga: <span id="matekAtlag" class="stat">00.0</span> <br>
+                Magyar pontszámok átlaga: <span id="magyarAtlag" class="stat">00.0</span> <br>
+                Összesített pontszámok átlaga: <span id="osszAtlag" class="stat">00.0</span>
+            </h4>
         </div>
+
+        <hr>
 
         <table id="results"></table>
     </div>
