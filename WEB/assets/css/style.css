@@ -13,7 +13,8 @@ body {
     margin: auto;
 }
 #inputPoints {
-    width: 30px;
+    width: 75px;
+    text-align: center;
 }
 #inputNev, #inputOM {
     display: inline-block;
@@ -34,12 +35,12 @@ body {
     border-collapse: collapse;
 }
 #results tr:hover {
-    background-color: navajowhite;
+    background-color: rgb(255, 209, 141);
     color: black;
     transition: 0.2s;
 }
 #results td:hover {
-    background-color: rgb(255, 200, 116);
+    background-color: rgb(255, 186, 81);
     transition: 0.2s;
 }
 #results th {
@@ -49,4 +50,22 @@ body {
 #results td, #results th {
     border: 1px solid black;
     height: 25px;
+}
+
+#results tbody:first-child {
+    background-color: navajowhite;
+    color: black;
+    cursor: pointer;
+}
+tbody:nth-child(odd) {
+    background-color: #ab8b74;
+}
+tbody:nth-child(even) {
+    background-color: #765848;
+}
+
+#csvOut {
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    font-family: 'Courier New', Courier, monospace;
 }
